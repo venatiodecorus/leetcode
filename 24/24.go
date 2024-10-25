@@ -14,18 +14,18 @@ func main() {
 	fmt.Println("Should be [1]:", swapPairs(&ListNode{Val: 1}))
 }
 
- type ListNode struct {
-	Val int
+type ListNode struct {
+	Val  int
 	Next *ListNode
- }
+}
 
- func swapPairs(head *ListNode) *ListNode {
-    dummy := &ListNode{}
+func swapPairs(head *ListNode) *ListNode {
+	dummy := &ListNode{}
 	dummy.Next = head
 	prev := dummy
 	current := head
 
-	for(current !=nil && current.Next != nil) {
+	for current != nil && current.Next != nil {
 		first := current
 		second := current.Next
 
@@ -38,11 +38,9 @@ func main() {
 	}
 
 	return dummy.Next
- }
+}
 
-
-
- func printList(l *ListNode) {
+func printList(l *ListNode) {
 	for l != nil {
 		fmt.Print(l.Val, " ")
 		l = l.Next
